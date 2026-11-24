@@ -1,1 +1,287 @@
+<!<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ade Rafa Mustofa | Portfolio</title>
+  <link rel="stylesheet" href="portofolio.css">
+</head>
+<body>
 
+  <!-- Latar belakang partikel bintang/cahaya -->
+  <canvas id="particles"></canvas>
+
+  <!-- Navbar melayang di atas -->
+  <nav class="navbar">
+    <a href="#home" class="active">Home</a>
+    <a href="#about">About</a>
+    <a href="#showcase">Portfolio</a>
+    <a href="https://instagram.com" target="_blank">Contact</a>
+    <span class="nav-icon" id="btnTema" onclick="gantiTema()" style="cursor:pointer;" title="Ganti Tema">☾</span>
+  </nav>
+
+  <!-- Konten Utama -->
+  <main id="home" class="hero">
+
+    <!-- Kolom Kiri: Teks Perkenalan -->
+    <div class="hero-left">
+      <h1 class="judul">Welcome to<br><span>My Portfolio</span></h1>
+            <p class="subjudul"><span id="typingText"></span><span class="cursor-ketik">|</span></p>
+
+      <p class="deskripsi">
+        Berawal dari rasa penasaran, sekarang jadi hobi seru. Aku suka bereksperimen dengan kode HTML, CSS, dan JavaScript untuk mengubah ide menjadi tampilan web interaktif yang keren dan nyaman digunakan.
+      </p>
+
+      <div class="tombol-grup">
+        <button class="btn-primary" onclick="bukaModal()">Lihat Projek →</button>
+        <button class="btn-secondary" onclick="window.open('https://instagram.com', '_blank')">Hubungi Saya ✉</button>
+
+      </div>
+
+      <div class="sosmed">
+        <span>FIND ME:</span>
+          <a href="https://instagram.com" target="_blank">adrpmst</a> • 
+  <a href="https://tiktok.com" target="_blank">TT</a> • 
+  <a href="https://github.com" target="_blank">GH</a>
+      </div>
+    </div>
+
+    <!-- Kolom Kanan: Kartu ID Card Lanyard 3D Interaktif -->
+    <div class="hero-right">
+      <div class="lanyard-container" id="lanyard">
+        <div class="tali-lanyard"><span>ADE RAFA MUSTOFA</span></div>
+        <div class="pengait"></div>
+        <div class="id-card" id="idCard">
+          <div class="card-top">
+            <span class="badge">DEVELOPER</span>
+            <span class="tahun">2026</span>
+          </div>
+          <div class="avatar-box">
+            <!-- Ganti src di bawah dengan nama file fotomu kalau mau pakai foto asli -->
+             <img src="foto.jpg" alt="Ade Rafa Mustofa" class="avatar-img">
+          </div>
+          <div class="card-info">
+            <h3>ADE RAFA MUSTOFA</h3>
+            <p>WEB CREATOR & CODER</p>
+          </div>
+          <div class="card-footer">PORTFOLIO</div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <section id="about" class="about-section">
+    <h2 class="about-title">About Me</h2>
+
+    <div class="about-container">
+      <div class="about-col-left">
+        <p class="hi-text">Hi, I'm</p>
+        <h3 class="nama-besar">Ade Rafa<br>Mustofa</h3>
+        <button class="btn-hubungi" onclick="window.open('https://instagram.com', '_blank')">
+          ✉ Hubungi Saya
+        </button>
+      </div>
+
+      <div class="about-col-center">
+        <div class="foto-led-box">
+        <img src="foto.jpg" alt="Ade Rafa Mustofa" class="foto-fade">
+        </div>
+        </div>
+
+      <div class="about-col-right">
+        <p>
+          Saya adalah <strong>Junior Developer</strong> yang berfokus pada pengembangan teknologi yang fungsional sekaligus menarik. Saya senang memadukan kode, desain, dan pengalaman 3D untuk membangun produk digital yang berkesan.
+        </p>
+        <p>
+          Dengan HTML, CSS, JavaScript, dan teknologi web modern, saya mengubah ide menjadi pengalaman digital yang intuitif, responsif, dan berdampak.
+        </p>
+        <a href="#projek" class="lihat-projek-link" onclick="bukaModal()">↗ Lihat Projek ↗</a>
+      </div>
+    </div> 
+        <!-- Kartu Minat Gaming (GTA SA-MP) & Social Hub -->
+    <div class="interest-hub">
+      <div class="interest-card">
+        <span class="interest-tag">🎮 GAMING & DEV INTEREST</span>
+        <h4>Inspired by GTA SA-MP & Client Modding</h4>
+        <p>
+          Tertarik mengeksplorasi bagaimana antarmuka web modern, sistem jaringan, dan dunia modding seperti <strong>GTA San Andreas Multiplayer (SA-MP)</strong> bekerja di balik layar.
+        </p>
+      </div>
+
+      <div class="social-hub-card">
+        <span class="interest-tag">🌐 CONNECT WITH ME</span>
+        <h4>Let's Talk Code & Gaming</h4>
+        <div class="hub-buttons">
+          <a href="https://instagram.com" target="_blank" class="hub-btn">📸 IG: @adrpmst</a>
+          <button class="hub-btn" onclick="salinTeks('adrpmst')">💬 Copy Username</button>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <!-- BAGIAN 3: MUSIC PLAYLIST (Scroll ke bawah) -->
+  <section id="music" class="music-section">
+    <div class="music-container">
+      <!-- Kolom Kiri -->
+      <div class="music-left">
+        <h2 class="music-title">A little music.<br><span>A lot of ideas.</span></h2>
+        <p class="music-desc">
+          Musik yang menemani proses saya mengubah ide menjadi sesuatu yang nyata. Intip playlist yang sedang sering saya putar.
+        </p>
+        <a href="https://spotify.com" target="_blank" class="btn-spotify">
+          🎵 Daily Rotation di Spotify ↗
+        </a>
+      </div>
+
+      <!-- Kolom Kanan: Kotak Musik dengan LED Putih Berjalan -->
+      <div class="music-right">
+        <div class="music-led-box">
+          <div class="music-card">
+            <!-- Header Playlist -->
+            <div class="playlist-top">
+              <div class="cover-art">🎧</div>
+              <div class="playlist-info">
+                <h4>NgodingTime</h4>
+                <p class="author">Ade Rafa Mustofa</p>
+                <span class="saved-badge">✓ Disimpan di Spotify</span>
+                <div class="player-controls">
+                  <span id="statusText">⏸ Siap diputar</span>
+                  <span id="durasiText">03:06</span>
+                </div>
+              </div>
+              <button class="play-circle" id="btnPlayMain" onclick="togglePlay()">▶</button>
+            </div>
+
+            <!-- Daftar Lagu -->
+            <div class="track-list">
+              <div class="track-item" onclick="pilihLagu(this, 'Right Now', '03:20')">
+                <div class="track-name">
+                  <span class="play-icon">▶</span>
+                  <div>
+                    <strong>Right Now</strong>
+                    <small>One Direction</small>
+                  </div>
+                </div>
+                <span class="track-time">03:20</span>
+              </div>
+
+              <div class="track-item active" onclick="pilihLagu(this, 'Love Story (Taylor\'s Version)', '03:06')">
+                <div class="track-name">
+                  <span class="play-icon">ılılı</span>
+                  <div>
+                    <strong>Love Story (Taylor's Version)</strong>
+                    <small>Taylor Swift</small>
+                  </div>
+                </div>
+                <span class="track-time">03:06</span>
+              </div>
+
+              <div class="track-item" onclick="pilihLagu(this, 'Payphone', '03:51')">
+                <div class="track-name">
+                  <span class="play-icon">▶</span>
+                  <div>
+                    <strong>Payphone</strong>
+                    <small>Maroon 5, Wiz Khalifa</small>
+                  </div>
+                </div>
+                <span class="track-time">03:51</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    <!-- BAGIAN 4: PORTFOLIO SHOWCASE (Tabs + Tech Stack + LED Putih Atas) -->
+  <section id="showcase" class="showcase-section">
+    <h2 class="showcase-title">Portfolio</h2>
+
+    <!-- Tombol Tab Navigasi -->
+    <div class="showcase-tabs">
+      <button class="tab-btn active" onclick="gantiTab('projects', this)">&lt;/&gt; Projects</button>
+      <button class="tab-btn" onclick="gantiTab('certificates', this)">🏅 Certificates</button>
+      <button class="tab-btn" onclick="gantiTab('achievements', this)">🏆 Achievements</button>
+      <button class="tab-btn" onclick="gantiTab('tech', this)">⚛ Tech Stack</button>
+    </div>
+
+    <!-- ISI TAB 1: PROJECTS (Karya Kamu) -->
+    <div id="tab-projects" class="tab-content active">
+      <div class="projects-grid">
+        <a href="kalkulator.html" class="project-card">
+          <div class="project-badge">WEB APP</div>
+          <h3>Kalkulator Dark Purple RGB</h3>
+          <p>Kalkulator interaktif tema gelap dengan efek bercak ungu basah dan kustomisasi simbol operator.</p>
+          <span class="project-link">Buka Projek ↗</span>
+        </a>
+
+        <a href="jam.html" class="project-card">
+          <div class="project-badge">REAL-TIME</div>
+          <h3>Jam Digital Gaming RGB</h3>
+          <p>Penunjuk waktu dan tanggal otomatis dengan animasi bingkai LED RGB bergerak.</p>
+          <span class="project-link">Buka Projek ↗</span>
+        </a>
+
+        <a href="dinding.html" class="project-card">
+          <div class="project-badge">ANALOG UI</div>
+          <h3>Jam Dinding Analog RGB</h3>
+          <p>Simulasi jarum jam dinding berputar mulus menggunakan kalkulasi derajat JavaScript.</p>
+          <span class="project-link">Buka Projek ↗</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- ISI TAB 2: CERTIFICATES -->
+    <div id="tab-certificates" class="tab-content">
+      <div class="empty-tab">
+        <p>🏅 Sertifikat pembelajaran Web Development & Coding akan ditampilkan di sini.</p>
+      </div>
+    </div>
+
+    <!-- ISI TAB 3: ACHIEVEMENTS -->
+    <div id="tab-achievements" class="tab-content">
+      <div class="empty-tab">
+        <p>🏆 Berhasil membangun 3 aplikasi web interaktif & website portofolio 3D pertama di tahun 2026.</p>
+      </div>
+    </div>
+
+    <!-- ISI TAB 4: TECH STACK (Kotak-kotak seperti di gambar) -->
+    <div id="tab-tech" class="tab-content">
+      <div class="tech-grid">
+        <div class="tech-card"><span class="tech-icon" style="color:#f7df1e;">JS</span><p>JavaScript</p></div>
+        <div class="tech-card"><span class="tech-icon" style="color:#e34f26;">5</span><p>HTML5</p></div>
+        <div class="tech-card"><span class="tech-icon" style="color:#1572b6;">3</span><p>CSS3</p></div>
+        <div class="tech-card"><span class="tech-icon" style="color:#61dafb;">⚛</span><p>React</p></div>
+        <div class="tech-card"><span class="tech-icon" style="color:#3776ab;">🐍</span><p>Python</p></div>
+        <div class="tech-card"><span class="tech-icon" style="color:#f05032;">⎇</span><p>Git</p></div>
+        <div class="tech-card"><span class="tech-icon" style="color:#ffffff;">🐱</span><p>GitHub</p></div>
+        <div class="tech-card"><span class="tech-icon" style="color:#38bdf8;">⚡</span><p>UI/UX</p></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Pop-up Daftar Projek Kamu -->
+  <div class="modal" id="modalProjek">
+    <div class="modal-content">
+      <span class="close" onclick="tutupModal()">&times;</span>
+      <h2>Projek Karya Saya</h2>
+      <p class="modal-sub">Klik salah satu projek untuk membukanya:</p>
+      <div class="projek-list">
+        <a href="kalkulator.html" class="projek-item">
+          <strong>1. Kalkulator Dark Purple RGB</strong>
+          <span>HTML • CSS • JavaScript</span>
+        </a>
+        <a href="jam.html" class="projek-item">
+          <strong>2. Jam Digital Gaming RGB</strong>
+          <span>Real-time Clock • CSS Animation</span>
+        </a>
+        <a href="dinding.html" class="projek-item">
+          <strong>3. Jam Dinding Analog RGB</strong>
+          <span>JS Transform • Dynamic UI</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="portofolio.js"></script>
+</body>
+</html>

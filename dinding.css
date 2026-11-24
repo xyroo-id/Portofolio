@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #07050a;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(147, 51, 234, 0.4) 0%, transparent 45%),
+    radial-gradient(circle at 75% 75%, rgba(59, 130, 246, 0.35) 0%, transparent 45%);
+  color: #ffffff;
+}
+
+.judul {
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  margin-bottom: 35px;
+  color: #e9d5ff;
+  text-shadow: 0 0 12px rgba(168, 85, 247, 0.8);
+}
+
+/* Bingkai lingkaran luar RGB */
+.rgb-ring {
+  padding: 6px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ff0055, #ff9900, #00ff88, #00ccff, #a855f7, #ff0055);
+  background-size: 400% 400%;
+  animation: animasiRGB 6s ease infinite;
+  box-shadow: 0 0 35px rgba(168, 85, 247, 0.55);
+}
+
+@keyframes animasiRGB {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Permukaan bulat jam dinding */
+.clock-face {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  background-color: #110d1a;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Posisi melingkar untuk angka 1-12 */
+.number {
+  position: absolute;
+  inset: 14px;
+  text-align: center;
+  transform: rotate(calc(30deg * var(--n)));
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #e9d5ff;
+}
+
+.number span {
+  display: inline-block;
+  transform: rotate(calc(-30deg * var(--n)));
+}
+
+/* Jarum Jam */
+.hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  border-radius: 6px;
+}
+
+.hour {
+  width: 6px;
+  height: 70px;
+  background-color: #ffffff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+.minute {
+  width: 4px;
+  height: 98px;
+  background-color: #c084fc;
+  box-shadow: 0 0 8px rgba(192, 132, 252, 0.8);
+}
+
+.second {
+  width: 2px;
+  height: 112px;
+  background-color: #ff0055;
+  box-shadow: 0 0 10px rgba(255, 0, 85, 0.9);
+}
+
+/* Titik poros tengah */
+.center-dot {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background-color: #ffffff;
+  border: 3px solid #a855f7;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.credit {
+  margin-top: 35px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: rgb(216, 180, 254);
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.85);
+}
+
